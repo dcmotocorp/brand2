@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Startups, Investors, AudienceList
+from .models import Startups, Investors, AudienceList, InvestorOfficesList, StartupsOfficesList
 
 
 class StartupSerializer(serializers.ModelSerializer):
@@ -16,4 +16,14 @@ class InvestorSerializer(serializers.ModelSerializer):
 class AudienceListSerializer(serializers.ModelSerializer):
     class Meta:
         model = AudienceList
+        fields = "__all__"
+
+class StartupsOfficesListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = StartupsOfficesList
+        fields = "__all__"
+
+class InvestorOfficesListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = InvestorOfficesList
         fields = "__all__"

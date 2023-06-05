@@ -11,7 +11,10 @@ route.register(r'investors',views.InvestorsList
 )
 route.register(r'audiences',views.AudienceListList
 )
-
+route.register(r'investoroffice',views.InvestorOfficesList
+)
+route.register(r'startupsoffice',views.StartupsOfficesList
+)
 
 
 urlpatterns = [

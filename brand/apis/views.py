@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Startups, Investors, AudienceList
-from .serializers import StartupSerializer,InvestorSerializer, AudienceListSerializer
+from .models import Startups, Investors, AudienceList, StartupsOfficesList, InvestorOfficesList
+from .serializers import StartupSerializer,InvestorSerializer, AudienceListSerializer,StartupsOfficesListSerializer,InvestorOfficesListSerializer
 from rest_framework.response import Response
 from rest_framework import status 
 from rest_framework.decorators import api_view
@@ -34,46 +34,12 @@ class AudienceListList(ModelViewSet):
     queryset = AudienceList.objects.all()
     serializer_class = AudienceListSerializer
  
+class StartupsOfficesList(ModelViewSet):
+    queryset = StartupsOfficesList.objects.all()
+    serializer_class = StartupsOfficesListSerializer
 
-def get_per_startupFeed(request):
-    pass
-
-def get_startup_detail(request):
-    pass 
-
-
-#    update section 
-
-def update_startup_basic_info(request):
-    pass
-
-def update_startup_feed(request):
-    pass
-
-#     delete section 
- 
-def delete_startup_feed(request):
-    pass
-
-def delete_startup(request):
-    pass 
-
-
-
-# =============== START UPS =========================
-
-# =============== INVESTOR  =========================
-
-def get_all_investors(request):
-    pass 
-
-def get_per_investorsfeed(request):
-    pass
-# =============== INVESTOR  =========================
-
-# =============== AUDIENCE  =========================
-def get_all_audience(request):
-    pass 
-# =============== AUDIENCE  =========================
+class InvestorOfficesList(ModelViewSet):
+    queryset = InvestorOfficesList.objects.all()
+    serializer_class = InvestorOfficesListSerializer
 
 

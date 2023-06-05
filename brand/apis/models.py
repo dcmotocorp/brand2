@@ -43,3 +43,13 @@ class AudienceList(models.Model):
     Company_rank = models.CharField(max_length=400,default=None,blank=True)
     Website = models.CharField(max_length=400,default=None,blank=True)
     about = models.TextField(default=None,blank=True)
+
+
+
+class InvestorOfficesList(models.Model):
+    location = models.CharField(max_length=400,default=None,blank=True)
+    investor = models.ForeignKey(Investors, on_delete=models.CASCADE)
+
+class StartupsOfficesList(models.Model):
+    location = models.CharField(max_length=400,default=None,blank=True)
+    startups = models.ForeignKey(Startups, on_delete=models.CASCADE)
