@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Startups
-from .serializers import StartupSerializer
+from .models import Startups, Investors, AudienceList
+from .serializers import StartupSerializer,InvestorSerializer, AudienceListSerializer
 from rest_framework.response import Response
 from rest_framework import status 
 from rest_framework.decorators import api_view
@@ -26,9 +26,13 @@ class Startups(ModelViewSet):
     serializer_class = StartupSerializer
     
 
+class InvestorsList(ModelViewSet):
+    queryset = Investors.objects.all()
+    serializer_class = InvestorSerializer
 
-
-
+class AudienceListList(ModelViewSet):
+    queryset = AudienceList.objects.all()
+    serializer_class = AudienceListSerializer
  
 
 def get_per_startupFeed(request):

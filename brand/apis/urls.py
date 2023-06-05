@@ -7,6 +7,11 @@ from . import views
 route = DefaultRouter()
 route.register(r'startups',views.Startups
 )
+route.register(r'investors',views.InvestorsList
+)
+route.register(r'audiences',views.AudienceListList
+)
+
 
 
 urlpatterns = [
